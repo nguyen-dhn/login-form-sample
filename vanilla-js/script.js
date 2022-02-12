@@ -1,20 +1,19 @@
-$('#login-button').click(function(){
-    $('#login-button').fadeOut("slow",function(){
-      $("#container").fadeIn();
-     
-    });
+$("#start-btn").click(function () {
+  $("#start-btn").fadeOut("slow", function () {
+    $("#login-container").fadeIn();
   });
-  
-  $(".close-btn").click(function(){
-   
-    $("#container, #forgotten-container").fadeOut(800, function(){
-      $("#login-button").fadeIn(800);
-    });
+});
+
+$("#login-btn").click(function () {
+  $("#login-container").fadeOut(function () {
+    let name = $("#fname").val();
+    $("#username").text(name);
+    $("#welcome-container").fadeIn();
   });
-  
-  /* Forgotten Password */
-  $('#forgotten').click(function(){
-    $("#container").fadeOut(function(){
-      $("#forgotten-container").fadeIn();
-    });
+});
+
+$(".close-btn").click(function () {
+  $("#login-container, #welcome-container").fadeOut(800, function () {
+    $("#start-btn").fadeIn(800);
   });
+});
